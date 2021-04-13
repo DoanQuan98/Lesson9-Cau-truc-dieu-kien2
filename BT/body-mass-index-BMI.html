@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    fieldset {
+        height: 100px;
+        width: 400px;
+    }
+</style>
+<body>
+<fieldset>
+    <legend>BMI index</legend>
+    <input type="number" id="weight" >
+    <input type="number" id="height" >
+    <button onclick="checkBody()">Submit</button>
+    <p id="result"></p>
+</fieldset>
+<script>
+    function checkBody() {
+        let a = +document.getElementById('weight').value;
+        let b = +document.getElementById('height').value;
+        let bmi = a / ( b ^ 2 );
+        if ( bmi < 18 ) {
+            document.getElementById('result').innerText = 'Underweight';
+        } else if ( bmi < 25.0 ) {
+            document.getElementById('result').innerText = 'Normal';
+        } else if ( bmi < 30.0 ) {
+            document.getElementById('result').innerText = 'Overweight';
+        } else {
+            document.getElementById('result').innerText = 'Obese';
+        }
+    }
+</script>
+</body>
+</html>

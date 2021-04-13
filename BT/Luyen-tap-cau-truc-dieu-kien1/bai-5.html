@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt('nhap diem toan:');
+    let b = +prompt('nhap diem ly:');
+    let c = +prompt('nhap diem hoa:');
+    let GPA = (a+b+c) / 3;
+    if (GPA >= 9.0) {
+        alert(GPA + ' Hang A');
+    } else if (GPA >= 7.0 && GPA < 9) {
+        alert(GPA + ' Hang B');
+    } else if (GPA >= 5.0 && GPA < 7) {
+        alert(GPA + ' Hang C');
+    } else if (GPA < 5 && GPA > 0) {
+        alert(GPA + ' Hang F');
+    } else {
+        alert('Ban chua nhap dung diem');
+    }
+</script>
+</body>
+</html>

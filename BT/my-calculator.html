@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<style>
+    fieldset {
+        width: 170px;
+        background-color: #737373;
+    }
+
+    button {
+        width: 100%;
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    .subtend {
+        background-color: #ffcc00;
+        color: white;
+    }
+
+    .clearData {
+        background-color: red;
+        color: white;
+    }
+
+    input {
+        height: 50px;
+    }
+</style>
+<body>
+<fieldset>
+    <label>CASIO fx 580</label>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="theData">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="setOutput(1)">1</button>
+            </td>
+            <td>
+                <button onclick="setOutput(2)">2</button>
+            </td>
+            <td>
+                <button onclick="setOutput(3)">3</button>
+            </td>
+            <td>
+                <button onclick="setOutput('+')" class="subtend">+</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="setOutput(4)">4</button>
+            </td>
+            <td>
+                <button onclick="setOutput(5)">5</button>
+            </td>
+            <td>
+                <button onclick="setOutput(6)">6</button>
+            </td>
+            <td>
+                <button onclick="setOutput('-')" class="subtend">-</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="setOutput(7)">7</button>
+            </td>
+            <td>
+                <button onclick="setOutput(8)">8</button>
+            </td>
+            <td>
+                <button onclick="setOutput(9)">9</button>
+            </td>
+            <td>
+                <button onclick="setOutput('*')" class="subtend">x</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="clearTex()" class="clearData">C</button>
+            </td>
+            <td>
+                <button onclick="setOutput(0)">0</button>
+            </td>
+            <td>
+                <button onclick="displayResult('=')" class="subtend">=</button>
+            </td>
+            <td>
+                <button onclick="setOutput('/')" class="subtend">&divide;</button>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<script>
+    function setOutput(value) {
+        document.getElementById('theData').value += value;
+    }
+
+    function displayResult() {
+        let input = document.getElementById('theData').value;
+        result = eval(input);
+        document.getElementById('theData').value = result;
+    }
+
+    function clearTex() {
+        document.getElementById('theData').value = '';
+    }
+</script>
+</body>
+</html>

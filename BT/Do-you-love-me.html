@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me?</title>
+</head>
+<style>
+    h1 {
+        position: absolute;
+        top: 300px;
+        left: 40%;
+    }
+
+    button {
+        position: absolute;
+        top: 400px;
+    }
+
+    #yes {
+        left: 45%;
+    }
+
+    #no {
+        left: 50%;
+    }
+</style>
+<body>
+<h1 id="clickOn" onmousedown="mouseDown()" onmouseup="mouseUp()">Do You Love Me ?</h1>
+<button id="yes" onclick="yesClick()">YES</button>
+<button id="no" onmouseover="noClick()">NO</button>
+<script>
+    function yesClick() {
+        alert('Bạn yêu tôi thì kệ bạn chứ :))')
+    }
+
+    function noClick() {
+        let a = Math.round(Math.random() * window.innerWidth);
+        let b = Math.round(Math.random() * window.innerHeight);
+        document.getElementById('no').style.left = a + 'px';
+        document.getElementById('no').style.top = b + 'px'
+    }
+
+    function mouseDown() {
+        document.getElementById('clickOn').style.color = 'red'
+    }
+
+    function mouseUp() {
+        document.getElementById('clickOn').style.color = 'blue'
+    }
+</script>
+</body>
+</html>
